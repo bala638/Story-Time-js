@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8"/>
+ <title>Full Story</title>
+ <!-- <link rel="stylesheet" href="style.css"/> -->
+ </head>
+ <body>
+ <nav><a href="index.html">← Back to Stories</a></nav>
+ <div class="story-full">
+ <h2 id="title"></h2>
+ <h4 id="author"></h4>
+ <p id="full-story"></p>
+ <div class="tts-controls">
+ <button onclick="speak()">
+ ▶
+ Play</button >
+ <button onclick="pause()">
+ ⏸
+ Pause</button >
+ <button onclick="resume()">
+ Resume</button >
+ <button onclick="stop()">
+ ⏹
+ Stop</button >
+ <!-- <button onclick="deleteStory()">Delete</button> -->
+ </div>
+ </div>
+ <script>
+ const story = JSON.parse(localStorage.getItem('selectedStory'));
+ document.getElementById('title').textContent = story.title;
+ document.getElementById('author').textContent = 'By ' +
+ story.author;
+ document.getElementById('full-story').textContent =
+ story.content;
+let utterance = new SpeechSynthesisUtterance(story.content);
+ function speak() {
+     speechSynthesis.speak(utterance);
+     }
+
+ function pause() { 
+    speechSynthesis.pause();
+ }
+
+ function resume() {
+      window.speechSynthesis.resume();
+    }
+
+ function stop() {
+ speechSynthesis.cancel();
+
+ utterance = new SpeechSynthesisUtterance(story.content);
+ }
+
+ </script>
+ <!-- <script src="script.js"> function deleteStory(index){
+  if(confirm("Are you sure want to delete this story ")){
+    allStories.splice(index,1);
+    localStorage.setItem('stories', JSON.stringify(allStories));
+    displayStories(allStories);
+  }
+function playTTS() {
+      stopTTS();
+      const text = document.getElementById('storyContent').innerText;
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(currentUtterance);
+    }
+    function pauseTTS() {
+      window.speechSynthesis.pause();
+    }
+    function resumeTTS() {
+      window.speechSynthesis.resume();
+    }
+    function stopTTS() {
+      window.speechSynthesis.cancel();
+    }
+
+ }</script> -->
+ </body>
+ </html

@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8"/>
+ <title>Full Story</title>
+ <link rel="stylesheet" href="style.css"/>
+ </head>
+ <body>
+ <nav><a href="index.html">← Back to Stories</a></nav>
+ <div class="story-full">
+ <h2 id="title"></h2>
+ <h4 id="author"></h4>
+ <p id="full-story"></p>
+ <div class="tts-controls">
+ <button onclick="speak()">
+ ▶
+ Play</button >
+ <button onclick="pause()">
+ ⏸
+ Pause</button >
+ <button onclick="stop()">
+ ⏹
+ Stop</button >
+ </div>
+ </div>
+ <script>
+ const story = JSON.parse(localStorage.getItem('selectedStory'));
+ document.getElementById('title').textContent = story.title;
+ document.getElementById('author').textContent = 'By ' +
+ story.author;
+ document.getElementById('full-story').textContent =
+ story.content;
+let utterance = new SpeechSynthesisUtterance(story.content);
+ function speak() { speechSynthesis.speak(utterance); }
+ function pause() { speechSynthesis.pause(); }
+ function stop() {
+ speechSynthesis.cancel();
+ utterance = new SpeechSynthesisUtterance(story.content);
+ }
+ </script>
+ </body>
+ </html

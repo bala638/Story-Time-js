@@ -1,0 +1,71 @@
+ body {
+ font-family: sans-serif;
+ margin: 0;
+ background: #f9f9f9;
+ }
+ nav {
+ background: #4a4a4a;
+ color: white;
+padding: 1em;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: space-between;
+ }
+ .logo {
+ font-size: 1.5em;
+ font-weight: bold;
+ }
+ .genres button {
+ margin: 0 0.5em;
+ background: #6c6c6c;
+ color: white;
+ border: none;
+ padding: 0.4em 0.8em;
+ border-radius: 5px;
+ }
+ #search {
+ padding: 0.5em;
+ margin-left : auto;
+ border-radius: 5px;
+ border: none;
+ }
+ .write-btn {
+ background: #00aa ;
+ color: white;
+padding: 0.5em 1em;
+ border-radius: 5px;
+ text-decoration: none;
+ margin-left : 1em;
+ }
+ .grid {
+ display: grid;
+ gap: 1em;
+ padding: 1em;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ }
+ .card {
+ background: white;
+ padding: 1em;
+ border-radius: 10px;
+ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ }
+ .write-form {
+ padding: 2em;
+ max-width: 600px;
+ margin: auto;
+ display: flex;
+ flex-direction: column;
+ }
+ .write-form input,
+ .write-form textarea,
+ .write-form select {
+margin-bottom: 1em;
+ padding: 0.8em;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ }
+ .tts-controls button {
+ margin-right: 1em;
+ padding: 0.5em 1em;
+ }

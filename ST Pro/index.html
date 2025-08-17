@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width,
+ initial-scale=1.0"/>
+ <title>StoryTime</title>
+    <link rel="icon" type="image/png" href="story.png">
+   <link rel="stylesheet" href="new.css">
+    <!-- <link rel="stylesheet" href="story.css"> -->
+    <!-- <link rel="stylesheet" href="newindex.css"> -->
+ </head>
+ <body>
+ <nav>
+ <div class="logo">StoryTime</div>
+ <div class="genres">
+    <tr>
+      <td>
+ <button data-genre="All" class="all">All</button>
+ <button  data-genre="Action" class="act">Action</button>
+ <button data-genre="Fantasy" class="fan">Fantasy</button >
+ <button data-genre="Drama" class="dra">Drama</button >
+ <button data-genre="Romance" class="rom">Romance</button >
+ <button data-genre="Sci-Fi" class="sci">Sci-Fi</button >
+   </td>
+  </tr>  
+ </div>
+ <div id="div"></div>
+ <input type="text" id="search" placeholder="Search by title or
+ author..." />
+ <a href="write.html" class="write-btn"><button class="btn">Write Story</button></a>
+ </nav>
+ <main id="story-container" class="grid"></main>
+ 
+ <script src="script.js"></script>
+ <footer></footer>
+ </body>
+</html>
